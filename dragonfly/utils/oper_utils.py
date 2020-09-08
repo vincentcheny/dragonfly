@@ -27,7 +27,7 @@ except ImportError as e:
                      'used, but might be slightly slower. To get rid of this warning, ' +
                      'install a numpy compatible Fortran compiler (e.g. gfortran) and ' +
                      'the python-dev package and reinstall Dragonfly.')
-  warn('%s\n%s'%(e, fortran_err_msg))
+  # warn('%s\n%s'%(e, fortran_err_msg))
   direct_ft_wrap = None
 from .general_utils import map_to_bounds
 from .doo import DOOFunction, pdoo_wrap
