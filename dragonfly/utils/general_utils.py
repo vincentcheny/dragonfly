@@ -182,6 +182,7 @@ def stable_cholesky(M, add_to_diag_till_psd=True):
       raise e
     diag_noise_power = -11
     max_M = np.diag(M).max()
+    if max_M <= 0: max_M = 1
     diag_noise = np.diag(M).max() * 1e-11
     chol_decomp_succ = False
     while not chol_decomp_succ:

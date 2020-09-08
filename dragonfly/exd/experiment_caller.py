@@ -147,6 +147,9 @@ class ExperimentCaller(object):
         experiment is represented differently. """
     assert self.domain.is_a_member(point)
     try:
+      for i in range(len(point[0])):
+        if type(point[0][i]) is np.ndarray:
+          point[0][i] = point[0][i][0]
       return self.experiment(point)
     except:
       return EVAL_ERROR_CODE

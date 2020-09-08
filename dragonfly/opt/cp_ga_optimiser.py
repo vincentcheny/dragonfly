@@ -73,7 +73,7 @@ def prod_discrete_random_mutation(x, list_of_list_of_items):
   change_idx = np.random.choice(len(x))
   change_list = copy(list_of_list_of_items[change_idx])
   change_list.remove(x[change_idx])
-  change_val = np.random.choice(change_list)
+  change_val = np.random.choice(change_list, size=int(len(change_list) > 0))
   ret[change_idx] = change_val
   return ret
 
